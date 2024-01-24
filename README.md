@@ -6,6 +6,21 @@ Homepage is [here](https://github.com/google/brotli/tree/master).
 
 I ported [this](https://github.com/google/brotli/blob/master/c/tools/brotli.c) for ESP-IDF.   
 
+# Installation overview
+
+1. In the components directory, clone Brotli version 1.1:
+```
+git clone https://github.com/google/brotli components/brotli
+```
+
+2. In the new Brotli directory, create a CMakeLists.txt file.
+```
+cp esp32/CMakeLists.txt components/brotli/
+```
+
+3. Compile this project.
+
+
 # Software requirements
 ESP-IDF V4.4/V5.x.   
 ESP-IDF V5.0 is required when using ESP32-C2.   

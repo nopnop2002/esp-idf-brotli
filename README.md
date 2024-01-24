@@ -16,7 +16,7 @@ git clone https://github.com/google/brotli components/brotli
 cp esp32/CMakeLists.txt components/brotli/
 cd spiffs
 idf.py build
-``
+```
 
 # How to use brotli on Linux
 ```

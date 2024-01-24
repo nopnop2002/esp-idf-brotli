@@ -2,7 +2,7 @@
 Demonstration of compression and decompression using HTTP Server.   
 This project is based on [this](https://github.com/espressif/esp-idf/tree/master/examples/protocols/http_server/file_serving) example.   
 
-![http-file-server](https://github.com/nopnop2002/esp-idf-brotli/assets/6020549/9d642848-2aeb-4dd7-9ebb-abdd2ea7a045)
+![http-file-server](https://github.com/nopnop2002/esp-idf-brotli/assets/6020549/4b388125-c82a-485b-ad6a-079ee8ff786b)
 
 # Installation
 

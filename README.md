@@ -20,6 +20,10 @@ cp esp32/CMakeLists.txt components/brotli/
 
 3. Compile this project.
 
+# Software requiment
+- brotli version 1.1.   
+The version of brotli is written [here](https://github.com/google/brotli/blob/master/c/common/version.h#L20).   
+
 
 # Software requirements
 ESP-IDF V4.4/V5.x.   

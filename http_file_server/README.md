@@ -7,8 +7,8 @@ This project is based on [this](https://github.com/espressif/esp-idf/tree/master
 # Installation
 
 ```
-git clone https://github.com/nopnop2002/esp-idf-zlib
-cd esp-idf-zlib/http_file_server
+git clone https://github.com/nopnop2002/esp-idf-brotli
+cd esp-idf-brotli/http_file_server
 idf.py menuconfig
 idf.py flash
 ```

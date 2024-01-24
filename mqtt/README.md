@@ -58,10 +58,10 @@ $ python3 mqtt-file.py path_to_host
 - Delete source files from ESP32
 - Delete compressed files from ESP32
 
-$ ls -l *.zlib
+$ ls -l *.br
 ```
 
-When the file on the host side is test.txt, a compressed file of test.txt.zlib is created.   
+When the file on the host side is test.txt, a compressed file of test.txt.br is created.   
 
 
 # MQTT Topic

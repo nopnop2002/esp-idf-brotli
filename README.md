@@ -32,7 +32,7 @@ $ brotli -d test.txt.br -o test2.txt
 
 # Comparison of zlib and brotli
 
-|source file|source size|brotli comress|zlib compress|
+|source file|source size(byte)|brotli comress(byte)|zlib compress(byte)|
 |:-:|:-:|:-:|:-:|
 |test.txt|20479|9470|4571|
 |esp32.jpeg|18753|18613|18218|

@@ -65,7 +65,7 @@ diff README.md README.md.md
 # How to use brotli on python
 ```
 python3 -m pip install Brotli
-cd python
+cd esp-idf-brotli/python
 
 # Compress file
 python3 compress.py path_to_compress path_to_output

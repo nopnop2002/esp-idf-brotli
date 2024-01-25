@@ -68,14 +68,19 @@ python -m pip install Brotli
 cd python
 
 # Compress file
-python3 ./compress.py test.txt test.txt.br
+python3 compress.py path_to_compress path_to_output
 
 # Decompress file
-python3 ./decompress.py test.txt.br test.txt.txt
-
-diff test.txt test.txt.txt
+python3 decompress.py path_to_decompress path_to_output
 ```
 
+
+### Example
+```
+python3 compress.py test.txt test.txt.br
+python3 decompress.py test.txt.br test.txt.txt
+diff test.txt test.txt.txt
+```
 
 # Comparison of zlib and brotli
 

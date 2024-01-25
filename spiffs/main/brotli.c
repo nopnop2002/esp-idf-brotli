@@ -678,41 +678,7 @@ void decomp_task(void *pvParameters) {
 	ESP_LOGI(pcTaskGetName(NULL), "param.dstPath=[%s]", param.dstPath);
 
 	Context context;
-	//context.quality = 11;
-	context.quality = 0;
-	context.lgwin = -1;
-	context.verbosity = 0;
-	context.comment_len = 0;
-	//context.force_overwrite = BROTLI_FALSE;
-	context.force_overwrite = BROTLI_TRUE;
-	context.junk_source = BROTLI_FALSE;
-	context.reject_uncompressible = BROTLI_FALSE;
-	context.copy_stat = BROTLI_TRUE;
-	context.test_integrity = BROTLI_FALSE;
-	context.write_to_stdout = BROTLI_FALSE;
-	context.decompress = BROTLI_FALSE;
-	context.large_window = BROTLI_FALSE;
-	context.allow_concatenated = BROTLI_FALSE;
-	context.output_path = NULL;
-	context.dictionary_path = NULL;
-	context.suffix = DEFAULT_SUFFIX;
-	for (int i = 0; i < MAX_OPTIONS; ++i) context.not_input_indices[i] = 0;
-	context.longest_path_len = 1;
-	context.input_count = 0;
-
-	context.dictionary = NULL;
-	context.dictionary_size = 0;
-	context.decoder = NULL;
-	context.prepared_dictionary = NULL;
-	context.modified_path = NULL;
-	context.iterator = 0;
-	context.ignore = 0;
-	context.iterator_error = BROTLI_FALSE;
-	context.buffer = NULL;
-	context.current_input_path = NULL;
-	context.current_output_path = NULL;
-	context.fin = NULL;
-	context.fout = NULL;
+	init_context(&context);
 
 	int result = 0;
 	context.current_input_path=param.srcPath;

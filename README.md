@@ -46,10 +46,12 @@ sudo apt-get install brotli
 ```
 
 ### Compress file using brotli
+```
 brotli path_to_input -o path_to_output
 ```
 
 ### Decompress file using brotli
+```
 brotli -d path_to_input -o path_to_output
 ```
 

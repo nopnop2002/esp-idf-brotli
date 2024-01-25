@@ -66,8 +66,13 @@ diff README.md README.md.md
 ```
 python -m pip install Brotli
 cd python
+
+# Compress file
 python3 ./compress.py test.txt test.txt.br
+
+# Decompress file
 python3 ./decompress.py test.txt.br test.txt.txt
+
 diff test.txt test.txt.txt
 ```
 

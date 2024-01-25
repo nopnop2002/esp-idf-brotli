@@ -39,14 +39,34 @@ idf.py build
 ```
 
 # How to use brotli on Linux
+
+### Installing brotli on Linux
 ```
-$ sudo apt-get install brotli
+sudo apt-get install brotli
+```
 
-# Compress
-$ brotli test.txt
+### Compress file using brotli
+brotli path_to_input -o path_to_output
+```
 
-# Decompress
-$ brotli -d test.txt.br -o test2.txt
+### Decompress file using brotli
+brotli -d path_to_input -o path_to_output
+```
+
+### Example
+```
+brotli README.md -o README.md.br
+brotli -d  README.md.br -o README.md.md
+diff README.md README.md.md
+```
+
+# How to use brotli on python
+```
+python -m pip install Brotli
+cd python
+python3 ./compress.py test.txt test.txt.br
+python3 ./decompress.py test.txt.br test.txt.txt
+diff test.txt test.txt.txt
 ```
 
 

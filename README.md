@@ -64,7 +64,7 @@ diff README.md README.md.md
 
 # How to use brotli on python
 ```
-python -m pip install Brotli
+python3 -m pip install Brotli
 cd python
 
 # Compress file

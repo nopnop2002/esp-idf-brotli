@@ -14,9 +14,9 @@ from enum import Enum
 
 MessageType = Enum('MessageType', ['HEADER', 'TAILER', 'DATA'])
 
-#broker="broker.hivemq.com"
-#broker="iot.eclipse.org"
-broker="broker.emqx.io"
+#default_broker="broker.hivemq.com"
+#default_broker="iot.eclipse.org"
+default_broker="broker.emqx.io"
 
 header_block_size=128
 data_block_size=512
@@ -211,7 +211,7 @@ def wait_for_responce(timeout):
 		time.sleep(1)
 
 def usage(name):
-	print("usage python3 {} path_to_host".format(name))
+	print("usage python3 {} path_to_host [broker]".format(name))
 
 def main():
 	global run_flag
@@ -219,7 +219,7 @@ def main():
 	argv = sys.argv
 	args = len(argv)
 	#print("args={}".format(args))
-	if args != 2:
+	if args < 2:
 		usage(argv[0])
 		exit()
 	if os.path.isfile(argv[1]) is False:
@@ -230,12 +230,15 @@ def main():
 	dst_file = "{}.br".format(argv[1])
 	print("src_file={} dst_file={}".format(src_file, dst_file))
 
-	print("connecting to broker ",broker)
 	client.on_message=on_message
 	client.on_publish=on_publish
 	client.puback_flag=False #use flag in publish ack
 	client.mid_value=None
-	client.connect(broker)#connect
+	__broker = default_broker
+	if args == 3:
+		__broker = argv[2]
+	print("connecting to broker ",__broker)
+	client.connect(__broker)#connect
 	client.loop_start() #start loop to process received messages
 	global topic_counter
 	topic_counter = 0

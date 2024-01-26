@@ -48,10 +48,10 @@ Run the following python script on the host side.
 ```
 $ python3 -m pip install paho-mqtt
 
-$ vi mqtt-file.py
-Set the broker you will use.
+Default Broker is broker.emqx.io.   
+You can specify a different broker when starting the script.
 
-$ python3 mqtt-file.py path_to_host
+$ python3 mqtt-file.py path_to_host [broker]
 - Send source file to ESP32 using mqtt
 - Compress source file using brotli
 - Receiving compressed files from ESP32 using mqtt

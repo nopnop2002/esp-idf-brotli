@@ -1,3 +1,12 @@
+/*
+	Example compression and decompression using brotli.
+
+	This example code is in the Public Domain (or CC0 licensed, at your option.)
+	Unless required by applicable law or agreed to in writing, this
+	software is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+	CONDITIONS OF ANY KIND, either express or implied.
+*/
+
 #include <stdio.h>
 #include <inttypes.h>
 #include <string.h>
@@ -110,12 +119,18 @@ void app_main(void)
 	xTaskCreate(&comp_task, "COMPRESS", 1024*4, (void *)&param, priority, NULL);
 	uint32_t comp_result = ulTaskNotifyTake( pdTRUE, portMAX_DELAY );	
 	ESP_LOGI(TAG, "comp_result=%"PRIi32, comp_result);
+	if (comp_result != 0) vTaskDelete(NULL);
 	printDirectory(mount_point);
 
+	// DeCompress
 	strcpy(param.srcPath, "/root/README.txt.br");
 	strcpy(param.dstPath, "/root/README.txt.txt");
 	xTaskCreate(&decomp_task, "DECOMPRESS", 1024*4, (void *)&param, priority, NULL);
 	uint32_t decomp_result = ulTaskNotifyTake( pdTRUE, portMAX_DELAY );	
 	ESP_LOGI(TAG, "decomp_result=%"PRIi32, decomp_result);
 	printDirectory(mount_point);
+
+	// Unmount SPIFFS File System
+	esp_vfs_spiffs_unregister(partition_label);
+	ESP_LOGI(TAG, "FLASH unmounted");
 }

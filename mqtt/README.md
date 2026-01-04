@@ -65,9 +65,6 @@ $ ls -l sdkconfig.br
 -rw-rw-r-- 1 nop nop 27973 Jan  4 11:53 sdkconfig.br
 ```
 
-When the file on the host side is test.txt, a compressed file of test.txt.br is created.   
-
-
 # MQTT Topic
 This project uses the following topics:
 ```

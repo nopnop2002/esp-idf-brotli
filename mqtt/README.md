@@ -51,14 +51,18 @@ $ python3 -m pip install paho-mqtt
 Default Broker is broker.emqx.io.   
 You can specify a different broker when starting the script.
 
-$ python3 mqtt-file.py path_to_host [broker]
-- Send source file to ESP32 using mqtt
-- Compress source file using brotli
+$ python3 mqtt-file.py sdkconfig [broker]
+- Send sdkconfig to ESP32 using mqtt
+- Compress sdkconfig using brotli
 - Receiving compressed files from ESP32 using mqtt
 - Delete source files from ESP32
 - Delete compressed files from ESP32
 
-$ ls -l *.br
+$ ls -l sdkconfig
+-rw-rw-r-- 1 nop nop 67241 Jan  4 11:49 sdkconfig
+
+$ ls -l sdkconfig.br
+-rw-rw-r-- 1 nop nop 27973 Jan  4 11:53 sdkconfig.br
 ```
 
 When the file on the host side is test.txt, a compressed file of test.txt.br is created.   

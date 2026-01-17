@@ -10,7 +10,7 @@ I ported [this](https://github.com/google/brotli/blob/master/c/tools/brotli.c) f
 
 1. In the components directory, clone Brotli version 1.1:
 ```
-git clone https://github.com/google/brotli components/brotli
+git clone -b v1.1.0 https://github.com/google/brotli components/brotli
 ```
 
 2. In the new Brotli directory, create a CMakeLists.txt file.
@@ -22,17 +22,17 @@ cp esp32/CMakeLists.txt components/brotli/
 
 # Software requiment
 - brotli version 1.1.   
- The version of brotli is written [here](https://github.com/google/brotli/blob/master/c/common/version.h#L20).   
+	The version of brotli is written [here](https://github.com/google/brotli/blob/master/c/common/version.h#L20).   
 
 - ESP-IDF V4.4/V5.x.   
- ESP-IDF V5.0 is required when using ESP32-C2.   
- ESP-IDF V5.1 is required when using ESP32-C6.   
+	ESP-IDF V5.0 or later.   
+	ESP-IDF V4.4 release branch reached EOL in July 2024.   
 
 # Installation
 ```
 git clone https://github.com/nopnop2002/esp-idf-brotli
 cd esp-idf-brotli
-git clone https://github.com/google/brotli components/brotli
+git clone -b v1.1.0 https://github.com/google/brotli components/brotli
 cp esp32/CMakeLists.txt components/brotli/
 cd spiffs
 idf.py build

@@ -24,7 +24,7 @@ cp esp32/CMakeLists.txt components/brotli/
 - brotli version 1.1.   
 	The version of brotli is written [here](https://github.com/google/brotli/blob/master/c/common/version.h#L20).   
 
--ESP-IDF V5.0 or later.   
+- ESP-IDF V5.0 or later.   
 	ESP-IDF V4.4 release branch reached EOL in July 2024.   
 
 # Installation
